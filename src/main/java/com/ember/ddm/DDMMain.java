@@ -1,4 +1,4 @@
-package com.softetch.ddm;
+package com.ember.ddm;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -24,5 +24,6 @@ public class DDMMain
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
+        
     }
 }
