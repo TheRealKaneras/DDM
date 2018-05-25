@@ -6,9 +6,11 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 
 
+import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 
 
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 
@@ -21,16 +23,24 @@ public class DDMMain {
     public static final String NAME = "Disturbed Dimensions Mod";
     public static final String VERSION = "prealpha 0.1";
 
+    @SidedProxy(clientSide = "com.ember.ddm.ClientProxy", serverSide = "com.ember.ddm.CommonProxy")
+    public static CommonProxy proxy;
+
     private static Logger logger;
 
     @EventHandler
-    public void preInit(FMLPreInitializationEvent event)
-    {
+    public void preInit(FMLPreInitializationEvent event) {
+
         logger = event.getModLog();
     }
 
     @EventHandler
-    public void init(FMLInitializationEvent event)
-    {
+    public void init(FMLInitializationEvent event) {
+        proxy.init();
+    }
+
+    @EventHandler
+    public void postInit(FMLPostInitializationEvent event) {
+
     }
 } 
