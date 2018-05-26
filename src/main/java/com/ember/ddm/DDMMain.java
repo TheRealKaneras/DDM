@@ -1,5 +1,6 @@
 package com.ember.ddm;
 
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Mod;
 
 
@@ -14,6 +15,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 
+import net.minecraftforge.fml.relauncher.Side;
 import org.apache.logging.log4j.Logger;
 
 @Mod(modid = DDMMain.MODID, name = DDMMain.NAME, version = DDMMain.VERSION)
@@ -25,6 +27,8 @@ public class DDMMain {
 
     @SidedProxy(clientSide = "com.ember.ddm.ClientProxy", serverSide = "com.ember.ddm.CommonProxy")
     public static CommonProxy proxy;
+
+    public static Side side =  FMLCommonHandler.instance().getSide();
 
     private static Logger logger;
 
