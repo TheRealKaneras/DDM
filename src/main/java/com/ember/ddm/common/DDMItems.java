@@ -1,6 +1,7 @@
 package com.ember.ddm.common;
 
 import com.ember.ddm.DDMMain;
+import com.ember.ddm.common.items.ItemOmnitrix;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
@@ -14,9 +15,11 @@ public class DDMItems {
 
     public static List<Item> ITEMS = new ArrayList<>();
 
+    public static Item omnitrix = new ItemOmnitrix();
+
     public static void init() {
 
-
+        addItem(omnitrix, "omnitrix");
 
     }
 
@@ -35,8 +38,10 @@ public class DDMItems {
         }
     }
 
-    public static Item addItem(Item item) {
+    public static Item addItem(Item item, String name) {
         ITEMS.add(item);
+        item.setRegistryName(DDMMain.MODID, name);
+        item.setUnlocalizedName(name);
         return item;
     }
 

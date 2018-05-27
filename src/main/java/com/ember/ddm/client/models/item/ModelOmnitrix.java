@@ -6,13 +6,18 @@
 
 package com.ember.ddm.client.models.item;
 
+import com.ember.ddm.DDMMain;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.ResourceLocation;
 
-public class ModelOmnitrix  extends ModelBase
-{
-  //fields
+public class ModelOmnitrix  extends ModelBase {
+
+    ResourceLocation tex = new ResourceLocation(DDMMain.MODID, "textures/models/omni_texture.png");
+
+    //fields
     ModelRenderer Shape1;
     ModelRenderer Shape2;
     ModelRenderer Shape3;
@@ -52,12 +57,11 @@ public class ModelOmnitrix  extends ModelBase
     ModelRenderer Shape37;
     ModelRenderer Shape38;
     ModelRenderer Shape39;
-  
-  public ModelOmnitrix ()
-  {
-    textureWidth = 64;
-    textureHeight = 64;
-    
+
+    public ModelOmnitrix () {
+      textureWidth = 64;
+      textureHeight = 64;
+
       Shape1 = new ModelRenderer(this, 38, 18);
       Shape1.addBox(0F, 0.3F, 0F, 2, 2, 4);
       Shape1.setRotationPoint(6F, 0F, 8F);
@@ -292,62 +296,64 @@ public class ModelOmnitrix  extends ModelBase
       Shape39.setTextureSize(64, 64);
       Shape39.mirror = true;
       setRotation(Shape39, 0.7853982F, 0F, 0F);
-  }
-  
-  public void render(float f5)
-  {
-    //super.render(f5);
-    Shape1.render(f5);
-    Shape2.render(f5);
-    Shape3.render(f5);
-    Shape4.render(f5);
-    Shape5.render(f5);
-    Shape6.render(f5);
-    Shape7.render(f5);
-    Shape8.render(f5);
-    Shape9.render(f5);
-    Shape10.render(f5);
-    Shape11.render(f5);
-    Shape12.render(f5);
-    Shape13.render(f5);
-    Shape14.render(f5);
-    Shape15.render(f5);
-    Shape16.render(f5);
-    Shape17.render(f5);
-    Shape18.render(f5);
-    Shape19.render(f5);
-    Shape20.render(f5);
-    Shape21.render(f5);
-    Shape22.render(f5);
-    Shape23.render(f5);
-    Shape24.render(f5);
-    Shape25.render(f5);
-    Shape26.render(f5);
-    Shape27.render(f5);
-    Shape28.render(f5);
-    Shape29.render(f5);
-    Shape30.render(f5);
-    Shape31.render(f5);
-    Shape32.render(f5);
-    Shape33.render(f5);
-    Shape34.render(f5);
-    Shape35.render(f5);
-    Shape36.render(f5);
-    Shape37.render(f5);
-    Shape38.render(f5);
-    Shape39.render(f5);
-  }
-  
-  private void setRotation(ModelRenderer model, float x, float y, float z)
-  {
-    model.rotateAngleX = x;
-    model.rotateAngleY = y;
-    model.rotateAngleZ = z;
-  }
-  
-  public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity entity)
-  {
-    super.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
-  }
+    }
 
-}
+    public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+
+      super.render(entity, f, f1, f2, f3, f4, f5);
+      setRotationAngles(f, f1, f2, f3, f4, f5, entity);
+      Minecraft.getMinecraft().renderEngine.bindTexture(tex);
+      Shape1.render(f5);
+      Shape2.render(f5);
+      Shape3.render(f5);
+      Shape4.render(f5);
+      Shape5.render(f5);
+      Shape6.render(f5);
+      Shape7.render(f5);
+      Shape8.render(f5);
+      Shape9.render(f5);
+      Shape10.render(f5);
+      Shape11.render(f5);
+      Shape12.render(f5);
+      Shape13.render(f5);
+      Shape14.render(f5);
+      Shape15.render(f5);
+      Shape16.render(f5);
+      Shape17.render(f5);
+      Shape18.render(f5);
+      Shape19.render(f5);
+      Shape20.render(f5);
+      Shape21.render(f5);
+      Shape22.render(f5);
+      Shape23.render(f5);
+      Shape24.render(f5);
+      Shape25.render(f5);
+      Shape26.render(f5);
+      Shape27.render(f5);
+      Shape28.render(f5);
+      Shape29.render(f5);
+      Shape30.render(f5);
+      Shape31.render(f5);
+      Shape32.render(f5);
+      Shape33.render(f5);
+      Shape34.render(f5);
+      Shape35.render(f5);
+      Shape36.render(f5);
+      Shape37.render(f5);
+      Shape38.render(f5);
+      Shape39.render(f5);
+    }
+
+    private void setRotation(ModelRenderer model, float x, float y, float z)
+    {
+      model.rotateAngleX = x;
+      model.rotateAngleY = y;
+      model.rotateAngleZ = z;
+    }
+
+    public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity entity)
+    {
+      super.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
+    }
+
+  }

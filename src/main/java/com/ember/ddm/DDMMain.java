@@ -1,5 +1,6 @@
 package com.ember.ddm;
 
+import com.ember.ddm.common.DDMItems;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Mod;
 
@@ -41,6 +42,7 @@ public class DDMMain {
     @EventHandler
     public void init(FMLInitializationEvent event) {
         proxy.init();
+        DDMItems.init();
     }
 
     @EventHandler
