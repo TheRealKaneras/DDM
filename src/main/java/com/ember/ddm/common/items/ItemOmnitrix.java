@@ -7,7 +7,9 @@ import net.minecraft.item.Item;
 
 public class ItemOmnitrix extends Item {
 
-    public ItemOmnitrix() {
+    public ItemOmnitrix(String name) {
+        this.setRegistryName(DDMMain.MODID, name);
+        this.setUnlocalizedName(name);
         this.setTileEntityItemStackRenderer(new RenderOmnitrix());
         this.setMaxStackSize(1);
         this.setCreativeTab(CreativeTabs.MISC);

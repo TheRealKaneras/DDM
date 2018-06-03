@@ -42,7 +42,6 @@ public class DDMMain {
     @EventHandler
     public void init(FMLInitializationEvent event) {
         proxy.init();
-        DDMItems.init();
     }
 
     @EventHandler

@@ -2,24 +2,30 @@ package com.ember.ddm.common;
 
 import com.ember.ddm.DDMMain;
 import com.ember.ddm.common.items.ItemOmnitrix;
+import com.ember.ddm.common.items.SonicScrewdriver;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import java.util.ArrayList;
 import java.util.List;
 
+
+@Mod.EventBusSubscriber(modid = DDMMain.MODID)
 public class DDMItems {
 
     public static List<Item> ITEMS = new ArrayList<>();
 
-    public static Item omnitrix = new ItemOmnitrix();
+    public static Item sonicScrewdriver = new SonicScrewdriver("sonic_Screwdriver");
+    public static Item omnitrix = new ItemOmnitrix("omnitrix");
 
     public static void init() {
 
-        addItem(omnitrix, "omnitrix");
+        addItem(sonicScrewdriver);
+        addItem(omnitrix);
 
     }
 
@@ -38,10 +44,8 @@ public class DDMItems {
         }
     }
 
-    public static Item addItem(Item item, String name) {
+    public static Item addItem(Item item) {
         ITEMS.add(item);
-        item.setRegistryName(DDMMain.MODID, name);
-        item.setUnlocalizedName(name);
         return item;
     }
 

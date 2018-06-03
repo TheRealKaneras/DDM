@@ -14,7 +14,7 @@ public class RenderOmnitrix extends TileEntityItemStackRenderer {
     @Override
     public void renderByItem(ItemStack theStack, float partialTicks) {
         GlStateManager.pushMatrix();
-        model.render(player, 1, 1, 1, 1, 1, 1);
+        model.render(player,0.045F);
         GlStateManager.popMatrix();
     }
 }
